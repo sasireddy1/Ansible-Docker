@@ -4,13 +4,13 @@
   - name: build image
     docker_image:
       path: /home/ubuntu
-      name: webimage2
+      name: webimages
   - name: web container
     docker_container:
-      name: web
-      image: webimage2
+      name: web1
+      image: webimages
       state: started
       ports:
-      - "8070:80"
+      - "8060:80"
       tty: true
       detach: true
