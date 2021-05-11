@@ -1,0 +1,16 @@
+- name: creating webimage and creating container
+  hosts: webservers
+  tasks:
+  - name: build image
+    docker_image:
+      path: /home/ubuntu
+      name: webimage2
+  - name: web container
+    docker_container:
+      name: web
+      image: webimage2
+      state: started
+      ports:
+      - "8070:80"
+      tty: true
+      detach: true
