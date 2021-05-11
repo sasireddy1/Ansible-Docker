@@ -3,7 +3,7 @@
   tasks:
   - name: build image
     docker_image:
-      path: Dockerfile
+      path: /home/ubuntu
       name: webimages
   - name: web container
     docker_container:
